@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserSignup"></activity>
+        <activity android:name=".FundActivity"></activity>
+        <activity android:name=".HelpLine" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".UserSignup" />
         <activity android:name=".AppFeatures" />
         <activity android:name=".MapsActivity" />
         <!--
