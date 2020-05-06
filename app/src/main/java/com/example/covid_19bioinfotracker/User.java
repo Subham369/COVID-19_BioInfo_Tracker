@@ -25,13 +25,6 @@ public class User {
         this.phone = phone;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getAddress() {
         return address;
@@ -41,7 +34,7 @@ public class User {
         this.address = address;
     }
 
-    private String name,dob,phone,email,address;
+    private String name,dob,phone,address;
 
     public User() {
     }

@@ -47,4 +47,14 @@ public class AppFeatures extends AppCompatActivity {
         Intent intent=new Intent(getApplicationContext(),FundActivity.class);
         startActivity(intent);
     }
+
+    public void clkLab(View view) {
+        Intent intent=new Intent(getApplicationContext(),MapsActivity.class);
+        startActivity(intent);
+    }
+
+    public void clkTracker(View view) {
+        Intent intent=new Intent(getApplicationContext(),TrackerActivity.class);
+        startActivity(intent);
+    }
 }

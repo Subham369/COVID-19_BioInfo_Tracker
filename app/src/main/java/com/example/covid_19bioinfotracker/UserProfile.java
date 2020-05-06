@@ -39,12 +39,9 @@ public class UserProfile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user=dataSnapshot.getValue(User.class);
-                if (user == null)
-                    throw new AssertionError();
                 name.setText(user.getName());
                 dob.setText(user.getDob());
                 phone.setText(user.getPhone());
-                email.setText(user.getEmail());
                 address.setText(user.getAddress());
             }
 

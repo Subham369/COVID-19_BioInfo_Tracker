@@ -13,17 +13,22 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/covid19"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FundActivity"></activity>
+        <activity android:name=".NewsPortalActivity"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".TrackerActivity" />
+        <activity android:name=".AffectedCountries" />
+        <activity android:name=".FundActivity" />
         <activity android:name=".HelpLine" />
         <activity android:name=".UserProfile" />
         <activity android:name=".UserSignup" />
         <activity android:name=".AppFeatures" />
         <activity android:name=".MapsActivity" />
+        <activity android:name=".UserDetails" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -37,7 +42,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".UserDetails"
+            android:name=".SplashActivity"
             android:label="@string/title_activity_maps">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
