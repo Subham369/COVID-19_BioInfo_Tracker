@@ -42,6 +42,43 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750940689701:android:034f744524df9f94a936cc",
+        "android_client_info": {
+          "package_name": "com.example.geofencingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750940689701-andb4m9dd0nd1kditguhojnt968jh3q2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geofencingapp",
+            "certificate_hash": "e63649f2de89e559f75329d046eb72220637e9d4"
+          }
+        },
+        {
+          "client_id": "750940689701-7tfod9ubapum929eemgkohjko61eq1an.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIQjgQYeCwxnPInP_DRXMI3NSgr9XCC5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750940689701-7tfod9ubapum929eemgkohjko61eq1an.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

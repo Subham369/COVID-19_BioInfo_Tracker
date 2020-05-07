@@ -4,24 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#69FC5D"
     tools:context=".SplashActivity">
-    <com.airbnb.lottie.LottieAnimationView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_repeatMode="restart"
-        app:lottie_fileName="17856_defender_coronavirus.json">
+        android:src="@drawable/picsart"
+        />
 
-    </com.airbnb.lottie.LottieAnimationView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
-        android:text="Jeevan Seva"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
 </RelativeLayout>

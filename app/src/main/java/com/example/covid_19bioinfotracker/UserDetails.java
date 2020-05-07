@@ -1,8 +1,10 @@
 package com.example.covid_19bioinfotracker;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,13 +16,14 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class UserDetails extends AppCompatActivity {
-    private TextView info;
+    private TextView info,mForgotPassword;
     private FirebaseAuth firebaseAuth;
     private EditText mEmail,mPassword;
     Button btnLogin;
@@ -36,6 +39,7 @@ public class UserDetails extends AppCompatActivity {
         mEmail=findViewById(R.id.edtmEmail);
         mPassword=findViewById(R.id.edtmPassword);
         btnLogin=findViewById(R.id.btnLogin);
+        mForgotPassword=findViewById(R.id.forgotPassword);
     }
 
     public void clkLogin(View view) {
@@ -56,9 +60,23 @@ public class UserDetails extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
+                    firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(UserDetails.this, "Verification Email hasbeen sent", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(UserDetails.this, "onFailure:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
                     Toast.makeText(UserDetails.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(getApplicationContext(),AppFeatures.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -75,16 +93,37 @@ public class UserDetails extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-//        updateUI(currentUser);
-//    }
-//
-//    private void updateUI(FirebaseUser currentUser) {
-//        Intent intent=new Intent(getApplicationContext(),AppFeatures.class);
-//        startActivity(intent);
-//    }
+    public void forgot_password(View view) {
+        final EditText resetMail=new EditText(view.getContext());
+        AlertDialog.Builder passwordReset=new AlertDialog.Builder(view.getContext());
+        passwordReset.setTitle("Reset Password");
+        passwordReset.setMessage("Enter your email to receive reset link");
+        passwordReset.setView(resetMail);
+        passwordReset.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String mail=resetMail.getText().toString();
+                firebaseAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(UserDetails.this, "Reset link has been sent to the entered email", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(UserDetails.this, "Error!! Reset link not send:"+e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+            }
+        });
+        passwordReset.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        passwordReset.create().show();
+    }
+
 }
