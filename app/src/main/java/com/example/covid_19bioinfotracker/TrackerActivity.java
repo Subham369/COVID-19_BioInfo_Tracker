@@ -47,6 +47,9 @@ public class TrackerActivity extends AppCompatActivity {
     pieChart=findViewById(R.id.pieChart);
     scrollView=findViewById(R.id.scrollStats);
     fetchData();
+        getSupportActionBar().setTitle("TRACKER");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 }
 
     private void fetchData() {

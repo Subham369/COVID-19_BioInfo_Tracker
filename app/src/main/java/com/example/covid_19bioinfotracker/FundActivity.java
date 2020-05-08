@@ -41,6 +41,9 @@ public class FundActivity extends AppCompatActivity {
                 payUsingUPI(amount_txt,note_text,name_txt,upi_txt);
             }
         });
+        getSupportActionBar().setTitle("PM SUPPORT");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     private void payUsingUPI(String amount_txt, String note_text, String name_txt, String upi_txt) {
