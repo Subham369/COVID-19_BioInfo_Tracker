@@ -1,6 +1,5 @@
 package com.example.covid_19bioinfotracker;
 
-
 import com.example.covid_19bioinfotracker.Model.HeadLine;
 
 import retrofit2.Call;
@@ -12,6 +11,7 @@ public interface ApiInterface {
     @GET("top-headlines")
     Call<HeadLine> getheadline(
             @Query("country") String country,
+            @Query("category")String catagory,
             @Query("apiKey") String apikey
     );
 

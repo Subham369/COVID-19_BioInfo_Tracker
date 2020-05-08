@@ -10,4 +10,8 @@
     <color name="recovered">#66BB6A</color>
     <color name="deaths">#EF5350</color>
     <color name="active">#29B6F6</color>
+    <color name="grey">#eeefee</color>
+    <color name="red">#CE0700</color>
+    <color name="black">#191819</color>
+    <color name="white">#f7f6f9</color>
 </resources>

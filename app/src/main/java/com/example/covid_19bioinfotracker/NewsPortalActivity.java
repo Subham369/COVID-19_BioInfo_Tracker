@@ -1,15 +1,15 @@
 package com.example.covid_19bioinfotracker;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.covid_19bioinfotracker.Model.Articles;
 import com.example.covid_19bioinfotracker.Model.HeadLine;
@@ -24,20 +24,19 @@ import retrofit2.Response;
 
 public class NewsPortalActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    EditText searchNews;
-    Button btn_search;
-    final String API_KEY="17463f3a3f7a414e876226c4e6e1724f";
-    Adapter adapter;
-    List<Articles> articles=new ArrayList<>();
-    SwipeRefreshLayout swipeRefreshLayout;
-
+        RecyclerView recyclerView;
+        EditText searchNews;
+        Button btn_search;
+        final String API_KEY="a22bace86c0a497390928f77d119ec3d";
+        String newsCatagory="health";//change here
+        Adapter adapter;
+        List<Articles> articles=new ArrayList<>();
+        SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_portal);
-
         searchNews=findViewById(R.id.edtSearch);
         btn_search=findViewById(R.id.btn_search);
         swipeRefreshLayout=findViewById(R.id.swipeFresh);
@@ -47,13 +46,12 @@ public class NewsPortalActivity extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                retriveGson("",country,API_KEY);
+                retriveGson("",country,newsCatagory,API_KEY);//changes here
             }
         });
 
 
-        retriveGson("",country,API_KEY);
-
+        retriveGson("",country,newsCatagory,API_KEY);//changes here
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,26 +62,26 @@ public class NewsPortalActivity extends AppCompatActivity {
                     swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                         @Override
                         public void onRefresh() {
-                            retriveGson(searchNews.getText().toString(),country,API_KEY);
+                            retriveGson(searchNews.getText().toString(),country,newsCatagory,API_KEY);//changes here
                         }
                     });
-                    retriveGson(searchNews.getText().toString(),country,API_KEY);
+                    retriveGson(searchNews.getText().toString(),country,newsCatagory,API_KEY);//changes here
                 }
                 else
                 {
                     swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                         @Override
                         public void onRefresh() {
-                            retriveGson("",country,API_KEY);
+                            retriveGson("",country,newsCatagory,API_KEY);//change here
                         }
                     });
-                    retriveGson("",country,API_KEY);
+                    retriveGson("",country,newsCatagory,API_KEY);//changes here q
                 }
             }
         });
     }
 
-    public void retriveGson(String query,String country,String apiKey)
+    public void retriveGson(String query,String country,String catagory,String apiKey)
     {
         swipeRefreshLayout.setRefreshing(true);
         Call<HeadLine> call;
@@ -93,7 +91,7 @@ public class NewsPortalActivity extends AppCompatActivity {
         }
         else
         {
-            call=APIClient.getInstance().getApi().getheadline(country,apiKey);
+            call=APIClient.getInstance().getApi().getheadline(country,catagory,apiKey);
         }
 
         call.enqueue(new Callback<HeadLine>() {

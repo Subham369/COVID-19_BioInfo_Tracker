@@ -38,8 +38,9 @@
                 android:text="Title"
                 android:padding="10dp"
                 android:textSize="20dp"
+                android:fontFamily="@font/g_bold"
                 android:layout_width="wrap_content"
-                android:textColor="#8A8686"
+                android:textColor="@color/white"
                 android:id="@+id/tvTitle"
                 android:layout_height="wrap_content"/>
 
@@ -54,7 +55,7 @@
                     android:text="Source"
                     android:textSize="16dp"
                     android:layout_width="wrap_content"
-                    android:textColor="#8A8686"
+                    android:textColor="@color/white"
                     android:padding="10dp"
                     android:id="@+id/tvSource"
                     android:layout_height="wrap_content"/>
@@ -64,7 +65,7 @@
                     android:textSize="20dp"
                     android:gravity="right"
                     android:layout_width="match_parent"
-                    android:textColor="#000"
+                    android:textColor="@color/black"
                     android:id="@+id/tvDate"
                     android:layout_height="wrap_content"/>
             </LinearLayout>

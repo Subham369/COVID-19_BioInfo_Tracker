@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DetailsActivity">
+    tools:context=".DetailedActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -45,8 +45,9 @@
                     android:text="Title"
                     android:padding="10dp"
                     android:textSize="20dp"
+                    android:fontFamily="@font/g_bold"
                     android:layout_width="wrap_content"
-                    android:textColor="#5F5C5C"
+                    android:textColor="@color/white"
                     android:id="@+id/tvTitle1"
                     android:layout_height="wrap_content"/>
 
@@ -61,7 +62,7 @@
                         android:text="Source"
                         android:textSize="16dp"
                         android:layout_width="wrap_content"
-                        android:textColor="#5F5C5C"
+                        android:textColor="@color/white"
                         android:padding="10dp"
                         android:id="@+id/tvSource1"
                         android:layout_height="wrap_content"/>
@@ -71,7 +72,7 @@
                         android:textSize="20dp"
                         android:gravity="right"
                         android:layout_width="match_parent"
-                        android:textColor="#000"
+                        android:textColor="@color/black"
                         android:id="@+id/tvDate1"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
@@ -84,7 +85,7 @@
                 android:textSize="20dp"
                 android:padding="10dp"
                 android:layout_width="match_parent"
-                android:textColor="#5F5C5C"
+                android:textColor="@color/black"
                 android:id="@+id/tvDesc"
                 android:layout_height="wrap_content"/>
 
