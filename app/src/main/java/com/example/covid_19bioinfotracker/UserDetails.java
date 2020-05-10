@@ -126,4 +126,14 @@ public class UserDetails extends AppCompatActivity {
         passwordReset.create().show();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+        if (firebaseUser != null) {
+            Intent intent = new Intent(UserDetails.this, AppFeatures.class);
+            startActivity(intent);
+        }
+    }
 }

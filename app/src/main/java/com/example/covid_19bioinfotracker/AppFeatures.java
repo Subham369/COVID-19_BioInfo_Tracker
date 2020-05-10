@@ -23,6 +23,7 @@ public class AppFeatures extends AppCompatActivity {
     Button warnBtn;
     TextView warnTxt;
     FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +31,15 @@ public class AppFeatures extends AppCompatActivity {
         setContentView(R.layout.activity_app_features);
         warnBtn=findViewById(R.id.warnBtn);
         warnTxt=findViewById(R.id.warnTxt);
-//        final FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
+//        firebaseUser=firebaseAuth.getCurrentUser();
 //        if (!firebaseUser.isEmailVerified()){
 //            warnTxt.setVisibility(View.VISIBLE);
 //            warnBtn.setVisibility(View.VISIBLE);
 //            warnBtn.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
-//                   final FirebaseUser fUser=firebaseAuth.getCurrentUser();
-//                    fUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+////                   final FirebaseUser fUser=firebaseAuth.getCurrentUser();
+//                    firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
 //                        @Override
 //                        public void onSuccess(Void aVoid) {
 //                            Toast.makeText(AppFeatures.this, "Email has been verified", Toast.LENGTH_SHORT).show();
@@ -56,7 +57,7 @@ public class AppFeatures extends AppCompatActivity {
     }
 
     public void itemWorkerLocation(View view) {
-        Intent intent=new Intent(getApplicationContext(),MapsActivity.class);
+        Intent intent=new Intent(getApplicationContext(),LaborLocationActivity.class);
         startActivity(intent);
     }
 
@@ -83,6 +84,9 @@ public class AppFeatures extends AppCompatActivity {
             Intent intent=new Intent(getApplicationContext(),UserDetails.class);
             startActivity(intent);
         }
+
+        if (android.R.id.home==item.getItemId())
+            finish();
         return super.onOptionsItemSelected(item);
     }
 
@@ -105,4 +109,9 @@ public class AppFeatures extends AppCompatActivity {
         Intent intent=new Intent(getApplicationContext(),NewsPortalActivity.class);
         startActivity(intent);
     }
+
+    public void clkSymptoms(View view) {
+        startActivity(new Intent(AppFeatures.this,SymptomActivity.class));
+    }
+
 }

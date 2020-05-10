@@ -11,17 +11,23 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class FundActivity extends AppCompatActivity {
 
-    EditText amount,note ,name, upi_id;
+    Spinner  upi_id;
+    EditText amount,note ,name;
     Button pay;
     final int UPI_PAYMENT=0;
+    private int item_position=0;
+    private String text="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +36,43 @@ public class FundActivity extends AppCompatActivity {
 
         initalizeMethod();
 
+        ArrayList<String> coname = new ArrayList<>();
+        coname.add("Enter the amount to transfer money");
+        coname.add("pmcares@sbi");
+        coname.add("pmnrf@central");
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, coname);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        upi_id.setAdapter(arrayAdapter);
+
+        upi_id.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                upi_id.setSelection(position);
+                text=parent.getItemAtPosition(position).toString();
+                item_position=position;
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                upi_id.requestFocus();
+
+            }
+        });
+
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String amount_txt=amount.getText().toString();
                 String name_txt=name.getText().toString();
                 String note_text=note.getText().toString();
-                String upi_txt=upi_id.getText().toString();
+                String upi_txt=text;
 
                 payUsingUPI(amount_txt,note_text,name_txt,upi_txt);
             }
         });
+
+
         getSupportActionBar().setTitle("PM SUPPORT");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

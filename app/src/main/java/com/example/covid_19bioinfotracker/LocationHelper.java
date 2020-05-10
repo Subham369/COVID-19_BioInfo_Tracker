@@ -10,6 +10,9 @@ public class LocationHelper {
         this.longitude = longitude;
     }
 
+    public LocationHelper() {
+    }
+
     public double getLatitude() {
         return latitude;
     }

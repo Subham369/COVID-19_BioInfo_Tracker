@@ -22,8 +22,7 @@ tools:context=".FundActivity">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <EditText
-
+        <Spinner
             android:id="@+id/upi_id"
             android:layout_marginTop="20dp"
             android:hint="UPI ID"
