@@ -38,4 +38,18 @@ public class User {
 
     public User() {
     }
+
+
+    public User(String address, String dob,String phone,String name) {
+
+        if (name.trim().equals(""))
+        {
+            name="No Name";
+        }
+        this.address=address;
+        this.dob=dob;
+        this.phone=phone;
+        this.name = name;
+
+    }
 }

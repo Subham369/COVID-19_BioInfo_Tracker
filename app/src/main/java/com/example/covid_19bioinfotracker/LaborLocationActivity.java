@@ -45,6 +45,7 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class LaborLocationActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener,GoogleApiClient.ConnectionCallbacks,com.google.android.gms.location.LocationListener {
 
@@ -64,10 +65,9 @@ public class LaborLocationActivity extends FragmentActivity implements OnMapRead
     private long FASTEST_INTERVAL=5000;
     private LatLng latLng;
     private boolean isPermission;
-    private DatabaseReference rootRef;
-    private DatabaseReference usersRef;
     ArrayList<Double> latAdapter=new ArrayList<>();
-    ArrayList<Double> lonAdapter=new ArrayList<>();;
+    ArrayList<Double> lonAdapter=new ArrayList<>();
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

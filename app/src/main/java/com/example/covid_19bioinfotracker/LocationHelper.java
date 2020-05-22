@@ -6,6 +6,7 @@ public class LocationHelper {
     private double longitude;
 
     public LocationHelper(double latitude, double longitude) {
+
         this.latitude = latitude;
         this.longitude = longitude;
     }

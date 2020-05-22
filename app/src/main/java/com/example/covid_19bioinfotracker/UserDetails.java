@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class UserDetails extends AppCompatActivity {
     private TextView info,mForgotPassword;
     private FirebaseAuth firebaseAuth;
-    private EditText mEmail,mPassword;
+    private EditText mEmail,mPassword,mName;
     Button btnLogin;
 
     @Override
@@ -36,6 +36,7 @@ public class UserDetails extends AppCompatActivity {
 //        String place= getIntent().getStringExtra("places");
 //        info.setText(place);
         firebaseAuth=FirebaseAuth.getInstance();
+        mName=findViewById(R.id.edtmName);
         mEmail=findViewById(R.id.edtmEmail);
         mPassword=findViewById(R.id.edtmPassword);
         btnLogin=findViewById(R.id.btnLogin);
@@ -43,8 +44,14 @@ public class UserDetails extends AppCompatActivity {
     }
 
     public void clkLogin(View view) {
+        String name=mName.getText().toString();
         String email=mEmail.getText().toString();
         String password=mPassword.getText().toString();
+
+        if (TextUtils.isEmpty(name)){
+            mName.setError("Enter your name");
+            mName.requestFocus();
+        }
 
         if (TextUtils.isEmpty(email)){
             mEmail.setError("Enter a valid phone number");

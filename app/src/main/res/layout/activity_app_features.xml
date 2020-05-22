@@ -286,7 +286,7 @@
                                     android:id="@+id/imgFinance"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/finance"
+                                    android:src="@drawable/news"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
@@ -327,7 +327,7 @@
                                     android:id="@+id/imgComfort"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/comfort"
+                                    android:src="@drawable/finance"
                                     android:layout_centerInParent="true"/>
 
                                 <TextView
