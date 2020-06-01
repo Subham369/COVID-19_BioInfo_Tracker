@@ -31,7 +31,8 @@
         <activity android:name=".PreventionActivity">
         </activity>
         <activity android:name=".EditProfileActivity" />
-        <activity android:name=".CommentActivity" />
+        <activity android:name=".CommentActivity"
+            android:parentActivityName=".CommDashBoardActivity"/>
         <activity android:name=".PostActivity"
             android:parentActivityName=".CommDashBoardActivity"/>
         <activity android:name=".RegisterActivity" />

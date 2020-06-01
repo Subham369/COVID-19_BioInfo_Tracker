@@ -77,7 +77,6 @@ public class AppFeatures extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId()==R.id.help){
             Intent intent=new Intent(getApplicationContext(),HelpLine.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
         if (item.getItemId()==R.id.logout){
@@ -90,7 +89,6 @@ public class AppFeatures extends AppCompatActivity {
         if (item.getItemId()==R.id.add)
         {
             Intent intent=new Intent(getApplicationContext(),AddActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
 
@@ -101,56 +99,47 @@ public class AppFeatures extends AppCompatActivity {
 
     public void clkFund(View view) {
         Intent intent=new Intent(getApplicationContext(),FundActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
     public void clkLab(View view) {
         Intent intent=new Intent(getApplicationContext(),MapsActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
     public void clkTracker(View view) {
         Intent intent=new Intent(getApplicationContext(),TrackerActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
     public void clkNewsUpdate(View view) {
         Intent intent=new Intent(getApplicationContext(),NewsPortalActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
     public void clkSymptoms(View view) {
         Intent intent=new Intent(AppFeatures.this,SymptomActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
     public void clkFAQ(View view) {
         Intent intent=new Intent(AppFeatures.this,FaqActivity.class);
         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
     public void clkCondition(View view) {
         Intent intent=new Intent(AppFeatures.this,ConditionActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
     public void clkGeofence(View view) {
         Intent intent=new Intent(AppFeatures.this,GeofencingActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
     public void clkCommunity(View view) {
         Intent intent=new Intent(AppFeatures.this,CommunityActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }
