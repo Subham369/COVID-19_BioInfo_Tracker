@@ -39,9 +39,10 @@ public class UserProfile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user=dataSnapshot.getValue(User.class);
-                name.setText(user.getName());
+                name.setText(user.getUsername());
                 dob.setText(user.getDob());
-                phone.setText(user.getPhone());
+                phone.setText(user.getPhone_number());
+                email.setText(user.getEmail());
                 address.setText(user.getAddress());
             }
 

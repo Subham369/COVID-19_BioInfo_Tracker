@@ -65,7 +65,7 @@ public class UserSignup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_signup);
         edtPhone = findViewById(R.id.edtPhone);
-        edtOTP = findViewById(R.id.edtOTP);
+//        edtOTP = findViewById(R.id.edtOTP);
         edtName = findViewById(R.id.edtName);
         edtDOB = findViewById(R.id.edtDOB);
         edtEmail = findViewById(R.id.edtEmail);
@@ -102,76 +102,6 @@ public class UserSignup extends AppCompatActivity {
     }
 
     public void signUp(View view) {
-        String code = edtOTP.getText().toString();
-        if (code.isEmpty() || code.length() < 6) {
-            edtOTP.requestFocus();
-            edtOTP.setError("Enter correct OTP");
-            return;
-        }
-        verifyCode(code);
-    }
-
-    private void register(final String medtName, final String medtDOB, final String medtPhone, String medtEmail, String medtPassword, final String medtAddress,final String workInfo) {
-        firebaseAuth.createUserWithEmailAndPassword(medtEmail, medtPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-                    String userId = firebaseUser.getUid();
-                    databaseReference = FirebaseDatabase.getInstance().getReference("UserInfo").child(userId);
-                    HashMap<String, String> hashMap = new HashMap<>();
-                    hashMap.put("id", userId);
-                    hashMap.put("username", medtName);
-                    hashMap.put("dob", medtDOB);
-                    hashMap.put("phone_number", medtPhone);
-                    hashMap.put("address", medtAddress);
-
-                    databaseReference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Intent intent = new Intent(getApplicationContext(), UserDetails.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                                Toast.makeText(UserSignup.this, "Details saved successfully", Toast.LENGTH_LONG).show();
-                            } else
-                                Toast.makeText(UserSignup.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    });
-
-                }
-            }
-        });
-    }
-
-    private void verifyCode(String code) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verficationId, code);
-        signInWithCredential(credential);
-    }
-
-    private void signInWithCredential(PhoneAuthCredential credential) {
-        firebaseAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Toast.makeText(UserSignup.this, "OTP Verified", Toast.LENGTH_LONG).show();
-
-                } else {
-                    Toast.makeText(UserSignup.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-    }
-
-    public void verifyNumber(View view) {
-        String phoneNumber = edtPhone.getText().toString().trim();
-        String phoneId = "+91" + phoneNumber;
-        if (phoneId.isEmpty() || phoneId.length() < 10) {
-            edtPhone.setError("Enter a valid number");
-            edtPhone.requestFocus();
-            return;
-        } else {
             String medtName = edtName.getText().toString();
             String medtDOB = edtDOB.getText().toString();
             String medtPhone = edtPhone.getText().toString();
@@ -216,35 +146,41 @@ public class UserSignup extends AppCompatActivity {
                 return;
             }
             register(medtName, medtDOB, medtPhone, medtEmail, medtPassword, medtAddress,mspinner);
-            sendVerificationCode(phoneId);
-        }
-
     }
 
-    private void sendVerificationCode(String phNumber) {
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(phNumber, 60, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD, mCallback);
-    }
+    private void register(final String medtName, final String medtDOB, final String medtPhone, final String medtEmail, String medtPassword, final String medtAddress, final String workInfo) {
+        firebaseAuth.createUserWithEmailAndPassword(medtEmail, medtPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                    String userId = firebaseUser.getUid();
+                    databaseReference = FirebaseDatabase.getInstance().getReference("userdetails").child(userId);
+                    HashMap<String, String> hashMap = new HashMap<>();
+                    hashMap.put("id", userId);
+                    hashMap.put("username", medtName);
+                    hashMap.put("dob", medtDOB);
+                    hashMap.put("phone_number", medtPhone);
+                    hashMap.put("email", medtEmail);
+                    hashMap.put("address", medtAddress);
+                    hashMap.put("occupation", workInfo);
 
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-        @Override
-        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-            super.onCodeSent(s, forceResendingToken);
-            verficationId = s;
-        }
+                    databaseReference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Intent intent = new Intent(getApplicationContext(), UserDetails.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                Toast.makeText(UserSignup.this, "Details saved successfully", Toast.LENGTH_LONG).show();
+                            } else
+                                Toast.makeText(UserSignup.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
 
-        @Override
-        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-            String code = phoneAuthCredential.getSmsCode();
-            if (code != null) {
-                verifyCode(code);
+                }
             }
+        });
+    }
 
-        }
-
-        @Override
-        public void onVerificationFailed(FirebaseException e) {
-            Toast.makeText(UserSignup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-
-        }
-    };
 }

@@ -133,7 +133,7 @@
         android:drawableStart="@drawable/ic_add_location"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="Email"
+        android:hint="Address"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

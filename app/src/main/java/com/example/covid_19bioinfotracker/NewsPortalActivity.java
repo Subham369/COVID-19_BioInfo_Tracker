@@ -8,8 +8,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.covid_19bioinfotracker.Model.Articles;
-import com.example.covid_19bioinfotracker.Model.HeadLine;
+import com.example.covid_19bioinfotracker.Model_Main.Articles;
+import com.example.covid_19bioinfotracker.Model_Main.HeadLine;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class NewsPortalActivity extends AppCompatActivity {
         RecyclerView recyclerView;
         final String API_KEY="68d20c5774f64ecdb1c9a5ad78328a00";
         String newsCatagory="health";//change here
-        Adapter adapter;
+        Adapter_main adapter;
         List<Articles> articles=new ArrayList<>();
         SwipeRefreshLayout swipeRefreshLayout;
 
@@ -60,7 +60,7 @@ public class NewsPortalActivity extends AppCompatActivity {
                     swipeRefreshLayout.setRefreshing(false);
                     articles.clear();
                     articles= response.body().getArticles();
-                    adapter=new Adapter(NewsPortalActivity.this,articles);
+                    adapter=new Adapter_main(NewsPortalActivity.this,articles);
                     recyclerView.setAdapter(adapter);
                 }
             }

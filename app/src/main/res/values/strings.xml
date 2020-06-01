@@ -2,4 +2,10 @@
     <string name="app_name">COVID-19 BioInfo Tracker</string>
     <string name="title_activity_maps">COVID-19 BioInfo Tracker</string>
     <string name="title_activity_labor_location">Map</string>
+    <string name="what_s_on_your_mind">Enter your query</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="geofencing">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

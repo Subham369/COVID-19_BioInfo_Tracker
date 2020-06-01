@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.covid_19bioinfotracker.Model.Articles;
+import com.example.covid_19bioinfotracker.Model_Main.Articles;
 import com.squareup.picasso.Picasso;
 
 import org.ocpsoft.prettytime.PrettyTime;
@@ -23,12 +23,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class Adapter_main extends RecyclerView.Adapter<Adapter_main.ViewHolder> {
 
     Context context;
     List<Articles> articles;
 
-    public Adapter(Context context, List<Articles> articles) {
+    public Adapter_main(Context context, List<Articles> articles) {
         this.context = context;
         this.articles = articles;
     }

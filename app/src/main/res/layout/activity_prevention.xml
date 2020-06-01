@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreventionActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="COVID-19 Prevention Steps"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/wash_hand"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="wash-hand.json"
+            app:lottie_loop="true">
+
+        </com.airbnb.lottie.LottieAnimationView>
+
+        <TextView
+            android:text="Wash Hand"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/txt_washhand"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/namaste"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_above="@id/txt_washhand"
+            android:layout_centerHorizontal="true"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="namste.json"
+            app:lottie_loop="true">
+
+        </com.airbnb.lottie.LottieAnimationView>
+
+        <TextView
+            android:id="@+id/txt_namaste"
+            android:text="Say Namaste"
+            android:textSize="15dp"
+            android:layout_above="@id/namaste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/weremask"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_above="@id/txt_washhand"
+            android:layout_centerHorizontal="true"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="wear-mask.json"
+            app:lottie_loop="true">
+
+        </com.airbnb.lottie.LottieAnimationView>
+
+        <TextView
+            android:text="Were Mask"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/txt_weremask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/stayhome"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_above="@id/txt_washhand"
+            android:layout_centerHorizontal="true"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="stay-home.json"
+            app:lottie_loop="true">
+
+        </com.airbnb.lottie.LottieAnimationView>
+
+        <TextView
+            android:text="Stay Home Stay safe"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/txt_stayhome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/distance"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+
+            android:layout_centerHorizontal="true"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="distancing.json"
+            app:lottie_loop="true">
+
+        </com.airbnb.lottie.LottieAnimationView>
+
+        <TextView
+            android:text="Maintain Distance"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/txt_distance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</ScrollView>

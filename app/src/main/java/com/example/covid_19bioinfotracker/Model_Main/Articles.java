@@ -1,4 +1,4 @@
-package com.example.covid_19bioinfotracker.Model;
+package com.example.covid_19bioinfotracker.Model_Main;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

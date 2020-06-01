@@ -1,6 +1,6 @@
 package com.example.covid_19bioinfotracker;
 
-import com.example.covid_19bioinfotracker.Model.HeadLine;
+import com.example.covid_19bioinfotracker.Model_Main.HeadLine;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -125,20 +125,20 @@
                         app:layout_constraintTop_toBottomOf="@+id/edtDOB" />
 
 
-                    <Button
-                        android:onClick="verifyNumber"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginRight="35dp"
-                        android:background="@drawable/round_bg"
-                        android:text="SEND OTP"
-                        android:textColor="#fff"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.538"
-                        app:layout_constraintStart_toEndOf="@+id/edtPhone"
-                        app:layout_constraintTop_toBottomOf="@+id/edtDOB" />
+<!--                    <Button-->
+<!--                        android:onClick="verifyNumber"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:layout_marginTop="16dp"-->
+<!--                        android:layout_marginRight="35dp"-->
+<!--                        android:background="@drawable/round_bg"-->
+<!--                        android:text="SEND OTP"-->
+<!--                        android:textColor="#fff"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0.538"-->
+<!--                        app:layout_constraintStart_toEndOf="@+id/edtPhone"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/edtDOB" />-->
 
                     <EditText
                         android:id="@+id/edtPassword"
@@ -208,24 +208,24 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
-                    <EditText
-                        android:id="@+id/edtOTP"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="32dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="32dp"
-                        android:background="@drawable/round_otp"
-                        android:drawableStart="@drawable/ic_security"
-                        android:drawablePadding="16dp"
-                        android:ems="10"
-                        android:hint="Enter OTP"
-                        android:inputType="textPassword"
-                        android:padding="16dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/edtAddress" />
+<!--                    <EditText-->
+<!--                        android:id="@+id/edtOTP"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="32dp"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:layout_marginEnd="32dp"-->
+<!--                        android:background="@drawable/round_otp"-->
+<!--                        android:drawableStart="@drawable/ic_security"-->
+<!--                        android:drawablePadding="16dp"-->
+<!--                        android:ems="10"-->
+<!--                        android:hint="Enter OTP"-->
+<!--                        android:inputType="textPassword"-->
+<!--                        android:padding="16dp"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0.0"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/edtAddress" />-->
 
                     <Button
                         android:onClick="signUp"
@@ -243,7 +243,7 @@
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/edtOTP" />
+                        app:layout_constraintTop_toBottomOf="@+id/edtAddress" />
 
                     <TextView
                         android:id="@+id/edtFalse"
