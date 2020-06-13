@@ -21,6 +21,9 @@ public class CommunityActivity extends AppCompatActivity {
         setContentView(R.layout.activity_community);
         login=findViewById(R.id.login);
         register=findViewById(R.id.sign_up);
+        getSupportActionBar().setTitle("Volenteer Community");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

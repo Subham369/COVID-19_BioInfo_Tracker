@@ -35,10 +35,10 @@
 
                         <ImageView
                             android:id="@+id/imgLogo"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/hospital" />
+                            android:src="@drawable/dashboard_logo" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -85,50 +85,6 @@
                             android:orientation="horizontal"
                             android:layout_marginBottom="10dp"
                             android:weightSum="2">
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_marginLeft="5dp"
-                                android:gravity="center"
-                                android:layout_marginRight="5dp"
-                                android:orientation="vertical"
-                                app:cardElevation="20dp"
-                                app:cardCornerRadius="10dp">
-                                <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-                                    <ImageView
-                                        android:id="@+id/imgProfile"
-                                        android:layout_width="50dp"
-                                        android:layout_height="50dp"
-                                        android:src="@drawable/profile"
-                                        android:layout_centerInParent="true"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#000"
-                                        android:textStyle="bold"
-                                        android:text="PROFILE"
-                                        android:textSize="16sp"
-                                        android:textAlignment="center"
-                                        android:layout_below="@id/imgProfile"
-                                        android:layout_centerHorizontal="true"
-                                        android:layout_marginBottom="10dp"
-                                        android:layout_marginTop="10dp"/>
-
-                                    <Button
-                                        android:onClick="itemProfile"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:id="@+id/btnProfile"
-                                        android:background="@android:color/transparent"/>
-                                </RelativeLayout>
-
-                            </androidx.cardview.widget.CardView>
-
                             <androidx.cardview.widget.CardView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -153,7 +109,8 @@
                                         android:textColor="#000"
                                         android:textStyle="bold"
                                         android:text="Worker Tracker"
-                                        android:textSize="16sp"
+                                        android:textAllCaps="true"
+                                        android:textSize="14sp"
                                         android:textAlignment="center"
                                         android:layout_below="@id/imgEducation"
                                         android:layout_centerHorizontal="true"
@@ -169,13 +126,6 @@
                                 </RelativeLayout>
 
                             </androidx.cardview.widget.CardView>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="135dp"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="10dp"
-                            android:weightSum="2">
 
                             <androidx.cardview.widget.CardView
                                 app:cardElevation="20dp"
@@ -219,6 +169,15 @@
                                 </RelativeLayout>
 
                             </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:weightSum="2">
+
+
 
                             <androidx.cardview.widget.CardView
                                 app:cardElevation="20dp"
@@ -260,14 +219,6 @@
                                 </RelativeLayout>
 
                             </androidx.cardview.widget.CardView>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="135dp"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="10dp"
-                            android:weightSum="2">
 
                             <androidx.cardview.widget.CardView
                                 app:cardElevation="20dp"
@@ -311,6 +262,16 @@
                                 </RelativeLayout>
 
                             </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:weightSum="2">
+
+
 
                             <androidx.cardview.widget.CardView
                                 app:cardElevation="20dp"
@@ -353,16 +314,6 @@
                                 </RelativeLayout>
 
                             </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="135dp"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="10dp"
-                            android:weightSum="2">
-
                             <androidx.cardview.widget.CardView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -410,6 +361,15 @@
 
                             </androidx.cardview.widget.CardView>
 
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:weightSum="2">
+
                             <androidx.cardview.widget.CardView
                                 app:cardElevation="20dp"
                                 app:cardCornerRadius="10dp"
@@ -424,10 +384,10 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent">
                                     <ImageView
-                                        android:id="@+id/imgfaq"
-                                        android:layout_width="50dp"
+                                        android:id="@+id/imgCommunity"
+                                        android:layout_width="130dp"
                                         android:layout_height="50dp"
-                                        android:src="@drawable/faq"
+                                        android:src="@drawable/community_logo"
                                         android:layout_centerInParent="true"/>
 
                                     <TextView
@@ -435,16 +395,17 @@
                                         android:layout_height="wrap_content"
                                         android:textColor="#000"
                                         android:textStyle="bold"
-                                        android:text="FAQ"
-                                        android:textSize="14sp"
+                                        android:textAllCaps="true"
+                                        android:text="COVID-19 Community"
+                                        android:textSize="10sp"
                                         android:textAlignment="center"
-                                        android:layout_below="@id/imgfaq"
+                                        android:layout_below="@id/imgCommunity"
                                         android:layout_centerHorizontal="true"
                                         android:layout_marginBottom="10dp"
                                         android:layout_marginTop="10dp"/>
 
                                     <Button
-                                        android:onClick="clkFAQ"
+                                        android:onClick="clkCommunity"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:id="@+id/btnFaq"
@@ -452,14 +413,6 @@
                                 </RelativeLayout>
 
                             </androidx.cardview.widget.CardView>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="135dp"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="10dp"
-                            android:weightSum="2">
 
                             <androidx.cardview.widget.CardView
                                 app:cardElevation="20dp"
@@ -488,7 +441,7 @@
                                         android:textStyle="bold"
                                         android:text="Wellness Checker"
                                         android:textAllCaps="true"
-                                        android:textSize="14sp"
+                                        android:textSize="12sp"
                                         android:textAlignment="center"
                                         android:layout_below="@id/imgCondition"
                                         android:layout_centerHorizontal="true"
@@ -504,6 +457,14 @@
                                 </RelativeLayout>
 
                             </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:weightSum="2">
 
                             <androidx.cardview.widget.CardView
                                 app:cardElevation="20dp"
@@ -552,14 +513,6 @@
                                 </RelativeLayout>
 
                             </androidx.cardview.widget.CardView>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="135dp"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="10dp"
-                            android:weightSum="2">
 
                             <androidx.cardview.widget.CardView
                                 app:cardElevation="20dp"
@@ -575,10 +528,10 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent">
                                     <ImageView
-                                        android:id="@+id/imgCommunity"
+                                        android:id="@+id/imgFaq"
                                         android:layout_width="130dp"
                                         android:layout_height="50dp"
-                                        android:src="@drawable/community_logo"
+                                        android:src="@drawable/faq"
                                         android:layout_centerInParent="true"/>
 
                                     <TextView
@@ -586,17 +539,17 @@
                                         android:layout_height="wrap_content"
                                         android:textColor="#000"
                                         android:textStyle="bold"
-                                        android:text="COVID-19 Community"
+                                        android:text="FAQ"
                                         android:textAllCaps="true"
-                                        android:textSize="10sp"
+                                        android:textSize="14sp"
                                         android:textAlignment="center"
-                                        android:layout_below="@id/imgCommunity"
+                                        android:layout_below="@id/imgFaq"
                                         android:layout_centerHorizontal="true"
                                         android:layout_marginBottom="10dp"
                                         android:layout_marginTop="10dp"/>
 
                                     <Button
-                                        android:onClick="clkCommunity"
+                                        android:onClick="clkFAQ"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:id="@+id/btnCommunity"
@@ -605,6 +558,16 @@
 
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="135dp"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:layout_marginBottom="10dp"-->
+<!--                            android:weightSum="2">-->
+
+<!--                           -->
+<!--                        </LinearLayout>-->
 
                     </LinearLayout>
                 </RelativeLayout>

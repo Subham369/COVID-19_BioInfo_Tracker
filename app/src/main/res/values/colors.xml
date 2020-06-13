@@ -17,4 +17,7 @@
     <color name="part1">#CE0700</color>
     <color name="bg_bubble_self">#62caa6</color>
     <color name="bg_bubble_watbot">#ecf0f1</color>
+    <color name="color_1P">#35b64f</color>
+    <color name="color_1PD">#289b35</color>
+    <color name="color_1A">#FF4081</color>
 </resources>

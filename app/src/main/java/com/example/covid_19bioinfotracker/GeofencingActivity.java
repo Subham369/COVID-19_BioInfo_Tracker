@@ -42,7 +42,7 @@ public class GeofencingActivity extends FragmentActivity implements OnMapReadyCa
     private float GEOFENCE_RADIUS=200;
     private GeofenceHelper geofenceHelper;
     private String GEOFENCE_ID="GEOFENCE_ID";
-    private static final String TAG = "MapsActivity";
+    private static final String TAG = "TrailMapsActivity";
     private int requestCode=10002;
     private List<LatLng> dangerousArea;
 

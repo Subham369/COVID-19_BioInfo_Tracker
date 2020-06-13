@@ -62,10 +62,10 @@ public class AppFeatures extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void itemProfile(View view) {
-        Intent intent=new Intent(getApplicationContext(),UserProfile.class);
-        startActivity(intent);
-    }
+//    public void itemProfile(View view) {
+//        Intent intent=new Intent(getApplicationContext(),UserProfile.class);
+//        startActivity(intent);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,7 +103,7 @@ public class AppFeatures extends AppCompatActivity {
     }
 
     public void clkLab(View view) {
-        Intent intent=new Intent(getApplicationContext(),MapsActivity.class);
+        Intent intent=new Intent(getApplicationContext(),LocationDetectionActivity.class);
         startActivity(intent);
     }
 

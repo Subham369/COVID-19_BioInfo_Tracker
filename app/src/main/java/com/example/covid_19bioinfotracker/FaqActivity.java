@@ -92,6 +92,10 @@ public class FaqActivity extends AppCompatActivity {
         setContentView(R.layout.activity_faq);
         mContext = getApplicationContext();
 
+        getSupportActionBar().setTitle("Information Desk");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         inputMessage = findViewById(R.id.message);
         btnSend = findViewById(R.id.btn_send);
         btnRecord = findViewById(R.id.btn_record);

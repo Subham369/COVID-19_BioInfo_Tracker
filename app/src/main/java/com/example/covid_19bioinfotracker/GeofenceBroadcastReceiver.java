@@ -34,17 +34,17 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
         switch (transitionType) {
             case Geofence.GEOFENCE_TRANSITION_ENTER:
                 Toast.makeText(context, "You have enter the hotspot region", Toast.LENGTH_SHORT).show();
-                notificationHelper.sendHighPriorityNotification("GEOFENCE_TRANSITION_ENTER","You have enter the hotspot region",MapsActivity.class);
+                notificationHelper.sendHighPriorityNotification("GEOFENCE_TRANSITION_ENTER","You have enter the hotspot region", TrailMapsActivity.class);
                 break;
 
             case Geofence.GEOFENCE_TRANSITION_DWELL:
                 Toast.makeText(context, "You are inside the hotspot region", Toast.LENGTH_SHORT).show();
-                notificationHelper.sendHighPriorityNotification("GEOFENCE_TRANSITION_DWELL","You are inside the hotspot region",MapsActivity.class);
+                notificationHelper.sendHighPriorityNotification("GEOFENCE_TRANSITION_DWELL","You are inside the hotspot region", TrailMapsActivity.class);
                 break;
 
             case Geofence.GEOFENCE_TRANSITION_EXIT:
                 Toast.makeText(context, "You are out from the hotspot region", Toast.LENGTH_SHORT).show();
-                notificationHelper.sendHighPriorityNotification("GEOFENCE_TRANSITION_EXIT","You are out from the hotspot region",MapsActivity.class);
+                notificationHelper.sendHighPriorityNotification("GEOFENCE_TRANSITION_EXIT","You are out from the hotspot region", TrailMapsActivity.class);
                 break;
         }
     }

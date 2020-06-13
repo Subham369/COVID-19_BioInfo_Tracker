@@ -28,6 +28,9 @@ public class CommDashBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_comm_dash_board);
         bottomNavigationView=findViewById(R.id.bottom_navigation);
 
+        getSupportActionBar().setTitle("Community Dashboard");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
 
         Bundle intent=getIntent().getExtras();

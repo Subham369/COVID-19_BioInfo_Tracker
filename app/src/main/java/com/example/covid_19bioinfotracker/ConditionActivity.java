@@ -27,6 +27,10 @@ public class ConditionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_condition);
+
+        getSupportActionBar().setTitle("Wellness Checker");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         person_name=findViewById(R.id.person_name);
         person_age=findViewById(R.id.person_age);
         person_gender=findViewById(R.id.person_gender);

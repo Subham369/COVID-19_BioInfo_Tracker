@@ -45,6 +45,10 @@ public class NewsPortalActivity extends AppCompatActivity {
 
 
         retriveGson("",country,newsCatagory,API_KEY);//changes here
+
+        getSupportActionBar().setTitle("News Portal");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     public void retriveGson(String query,String country,String catagory,String apiKey)
