@@ -203,7 +203,7 @@ public class LocationDetectionActivity extends FragmentActivity implements OnMap
                 break;
 
             case R.id.hospital_nearby:
-                mMap.clear();
+//                mMap.clear();
                 url=getUrl(latitude,longitude,hospital);
                 transferData[0]=mMap;
                 transferData[1]=url;
@@ -213,7 +213,7 @@ public class LocationDetectionActivity extends FragmentActivity implements OnMap
                 break;
 
             case R.id.hotel_nearby:
-                mMap.clear();
+//                mMap.clear();
                 url=getUrl(latitude,longitude,restautant);
                 transferData[0]=mMap;
                 transferData[1]=url;
@@ -223,7 +223,7 @@ public class LocationDetectionActivity extends FragmentActivity implements OnMap
                 break;
 
             case R.id.school_nearby:
-                mMap.clear();
+//                mMap.clear();
                 url=getUrl(latitude,longitude,school);
                 transferData[0]=mMap;
                 transferData[1]=url;

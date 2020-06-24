@@ -142,4 +142,9 @@ public class AppFeatures extends AppCompatActivity {
         Intent intent=new Intent(AppFeatures.this,CommunityActivity.class);
         startActivity(intent);
     }
+
+    public void clkChatting(View view) {
+        Intent intent=new Intent(AppFeatures.this,SigninChatsActivity.class);
+        startActivity(intent);
+    }
 }
